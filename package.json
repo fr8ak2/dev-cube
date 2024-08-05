@@ -8,7 +8,7 @@
     "type": "module",
     "scripts": {
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d assets",
+        "deploy": "gh-pages -d dist",
         "build": "vite build",
         "dev": "vite",
         "watch": "vite build --watch"
