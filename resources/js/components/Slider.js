@@ -58,8 +58,6 @@ class Slider {
     }
 
     handleMouseStart(e) {
-        e.preventDefault();
-
         this.handleStart(e);
     }
 
@@ -80,6 +78,7 @@ class Slider {
 
     handleMouseMove(e) {
         e.preventDefault();
+        e.stopPropagation();
 
         this.handleMove(e);
     }
@@ -98,6 +97,7 @@ class Slider {
         const position = this.calculateBoundaries(this.position + (dist * accelerate));
 
         e.preventDefault();
+        e.stopPropagation();
 
         this.userDragged = true;
         this.snapPosition = this.calculateSnapPosition(position, swipeNext);
@@ -123,6 +123,7 @@ class Slider {
         if (!this.userDragged) return;
 
         e.preventDefault();
+        e.stopPropagation();
         this.userDragged = false;
     }
 

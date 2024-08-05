@@ -29,6 +29,10 @@
             padding: rem(64);
             margin: 0 0 rem(20px);
             background: $color__whip-background;
+
+            img {
+                pointer-events: none;
+            }
         }
 
         &-title > h2 {
