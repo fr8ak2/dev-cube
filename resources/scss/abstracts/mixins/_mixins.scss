@@ -1,0 +1,118 @@
+
+// Set the color of the highlight that appears over a link while it's being tapped.
+@mixin tap-highlight-color($value: rgba(0, 0, 0, 0)) {
+	-webkit-tap-highlight-color: $value;
+}
+
+// Set whether or not touch devices use momentum-based scrolling for the given element.
+@mixin overflow-scrolling($value: touch) {
+	-webkit-overflow-scrolling: $value;
+}
+
+// Set whether or not touch devices use momentum-based text size for the given element.
+@mixin text-size-adjust($value: 100%) {
+	-webkit-text-size-adjust: $value;
+}
+
+@mixin font-smoothing($webkit: antialiased, $moz: grayscale) {
+	-webkit-font-smoothing: $webkit;
+	-moz-osx-font-smoothing: $moz;
+}
+
+@mixin text-rendering($value: optimizeLegibility) {
+	text-rendering: $value;
+}
+
+@mixin scroll-behavior($value: smooth) {
+	scroll-behavior: $value;
+}
+
+// Generate `:hover` and `:focus` styles in one go.
+@mixin u-hocus {
+	&:focus,
+	&:hover {
+		@content;
+	}
+}
+
+// Generate `:active` and `:focus` styles in one go.
+@mixin u-actus {
+	&:focus,
+	&:active {
+		@content;
+	}
+}
+
+// Prevent text from wrapping onto multiple lines for the current element.
+@mixin u-truncate($width: 100%) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-wrap: normal;
+	@if $width {
+		max-width: $width;
+	}
+}
+
+// Applies accessible hiding to the current element.
+@mixin u-accessibly-hidden($important: true) {
+	$important: !important($important);
+	position: absolute $important;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	margin: 0;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	border: 0;
+}
+
+// Allows an accessibly hidden element to be focusable via keyboard navigation.
+@mixin u-accessibly-focusable {
+	@include u-actus {
+		clip: auto;
+		width: auto;
+		height: auto;
+
+		@content;
+	}
+}
+
+@mixin rem($property, $values...) {
+	$max: length($values);
+	$remValues: '';
+
+	@for $i from 1 through $max {
+		$value: strip-unit(nth($values, $i));
+		$remValues: #{$remValues + $value}rem;
+
+		@if $i < $max {
+			$remValues: #{$remValues + " "};
+		}
+	}
+
+	#{$property}: $remValues;
+}
+
+@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+	@each $property in $properties {
+		#{$property}: $min-value;
+	}
+
+	@media (min-width: $min-vw) {
+		@each $property in $properties {
+			#{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+		}
+	}
+
+	@media (min-width: $max-vw) {
+		@each $property in $properties {
+			#{$property}: $max-value;
+		}
+	}
+}
+
+// Column width with margin
+@mixin column-width($numberColumns: 3) {
+	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}

@@ -1,0 +1,20 @@
+ul,
+ol {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ol {
+    list-style: decimal;
+}
+
+dt {
+    font-weight: 700;
+}
+
+dd {
+    margin: 0 1.5em 1.5em;
+}

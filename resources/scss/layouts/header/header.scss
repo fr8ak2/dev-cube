@@ -1,0 +1,50 @@
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: rem($size__site-header-height);
+    z-index: 11;
+
+    .wrapper {
+        display: flex;
+    }
+
+    &__inner {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0 calc(#{rem($size__site-header-gap)} / 1.5);
+        flex: 1;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: rem(128);
+        height: rem(128);
+        margin-right: 5%;
+        padding: rem(10);
+        background: $color__linear-background;
+
+        &__link {
+            display: block;
+            width: rem(102);
+
+            img {
+                mix-blend-mode: multiply;
+            }
+        }
+    }
+
+    .menu {
+        padding: calc(#{rem($size__site-header-gap)} / 2) 0;
+
+        &__list {
+            display: flex;
+            gap: calc(#{rem($size__site-header-gap)} / 2) rem($size__site-header-gap);
+        }
+    }
+}

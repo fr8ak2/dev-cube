@@ -1,0 +1,10 @@
+
+.page {
+    position: relative;
+    min-width: rem(320px);
+    overflow: hidden;
+
+	&__wrapper {
+		opacity: 0;
+	}
+}

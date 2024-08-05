@@ -1,0 +1,36 @@
+{
+    "name": "baked-goods",
+    "private": true,
+    "version": "1.0.0",
+    "description": "Developer task for DevCube",
+    "homepage": "https://aishwaryaparab.github.io/baked-goods/",
+    "author": "Sergey B.",
+    "type": "module",
+    "scripts": {
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d assets",
+        "build": "vite build",
+        "dev": "vite",
+        "watch": "vite build --watch"
+    },
+    "dependencies": {
+        "dotenv": "^16.4.5",
+        "vite": "^5.3.5"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "gh-pages": "^6.1.1",
+        "sass": "^1.77.8"
+    }
+}

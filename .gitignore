@@ -1,0 +1,11 @@
+# Application
+assets/*
+
+# Logs
+*.log
+
+# Node
+/node_modules
+
+# Misc
+.idea

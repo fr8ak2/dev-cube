@@ -1,0 +1,12 @@
+
+.menu {
+	position: relative;
+
+	span {
+		display: block;
+		font-family: $font__tertiary;
+		font-size: rem(20);
+		letter-spacing: -0.035em;
+		text-shadow: rem(2) rem(2) $color__whip-text;
+	}
+}

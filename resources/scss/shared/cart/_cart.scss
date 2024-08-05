@@ -1,0 +1,51 @@
+
+.cart {
+    position: relative;
+    padding: rem(16) 0 0;
+
+    &__inner {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: rem(48);
+        height: rem(48);
+        margin: 0 rem(24) 0 0;
+        border: rem(2) dashed $color__light-border;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: $color__light-background;
+        }
+    }
+
+    &__icon {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__badge {
+        position: absolute;
+        top: rem(-14);
+        right: rem(-14);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: rem(24);
+        height: rem(24);
+        background: $color__dark-background;
+        border-radius: 50%;
+        pointer-events: none;
+
+         > span {
+             font-family: $font__tertiary;
+             font-weight: 700;
+             color: $color__white-text;
+         }
+    }
+}

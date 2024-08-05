@@ -1,0 +1,11 @@
+:where(a) {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+	transition: color .45s ease-in-out;
+
+    &:is(:hover, :focus, :active) {
+        color: $color__link-hover;
+        outline: none;
+    }
+}

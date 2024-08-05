@@ -1,0 +1,28 @@
+
+form {
+
+	input[type="text"],
+	input[type="email"],
+	input[type="phone"],
+	textarea {
+		width: 100%;
+		padding: rem(12px);
+		outline: none;
+		border: 1px solid $color__input-border;
+		border-radius: 0;
+	}
+
+    input {
+
+        &[type="text"],
+        &[type="email"] {
+            display: flex;
+            align-items: center;
+            height: rem(48px);
+        }
+    }
+
+	textarea {
+		resize: vertical;
+	}
+}

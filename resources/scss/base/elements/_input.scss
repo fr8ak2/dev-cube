@@ -1,0 +1,11 @@
+:where(input, optgroup, select, textarea) {
+    font-family: inherit;
+    font-size: inherit;
+    margin: 0;
+    line-height: inherit;
+}
+
+:where(input[type="number"]) {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}

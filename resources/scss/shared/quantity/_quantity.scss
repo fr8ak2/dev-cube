@@ -1,0 +1,31 @@
+.quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: rem(96);
+    height: rem(40);
+    padding: rems(8 16);
+    background: $color__input-background;
+    border-radius: rem(64);
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: rem(10);
+        height: rem(24);
+    }
+
+    &__input {
+        font-weight: 500;
+        font-size: rem(18);
+        width: rem(28);
+        height: auto;
+        padding: 0;
+        text-align: center;
+        border: 0;
+        background: transparent;
+        overflow: visible;
+        pointer-events: none;
+    }
+}

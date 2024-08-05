@@ -1,0 +1,52 @@
+:where(button, input:is([type="button"], [type="reset"], [type="submit"])) {
+    background: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+:where(.button, [role="button"]) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: rems(16px 22px);
+    min-width: rem(196px);
+    height: rem(60px);
+    color: $color__button-text;
+    background: $color__button-background;
+    border: 1px solid transparent;
+    transition: color .45s $ease, background .45s $ease, border .45s $ease;
+
+    > .text {
+        font-family: $font__main;
+        font-weight: 500;
+        font-size: rem(20px);
+        line-height: 1.2;
+        white-space: nowrap;
+        text-shadow: rem(2) rem(2) $color__whip-text;
+    }
+
+    &:is(:hover, :focus) {
+        color: $color__button-hover-text;
+        background: $color__button-hover-background;
+    }
+
+    &:is(.--arrow) {
+        gap: 0 rem(12);
+        border: 1px solid $color__button-border;
+    }
+
+    &:is(.--small) {
+        height: rem(56px);
+
+        > .text {
+            font-size: rem(18px);
+        }
+    }
+
+    &:is(.--icon) {
+
+        > .icon {
+            margin: 0 rem(16) 0 0;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+@use 'sass:math';
+
+@function strip-unit($number) {
+    @if type-of($number) == "number" and not unitless($number) {
+        @return math.div($number, ($number * 0 + 1));
+    }
+
+    @return $number;
+}
+
+// Converts the given pixel value to its EM equivalent.
+@function em($value, $base-value: $font__size-body) {
+    $value: math.div(strip-unit($value), strip-unit($base-value)) * 1em;
+    @if ($value == 0rem) {
+        $value: 0;
+    }
+    @return $value;
+}
+
+
+// Converts the given pixel value to its REM equivalent.
+@function rem($value, $base-value: $font__size-body) {
+    $value: math.div(strip-unit($value), strip-unit($base-value)) * 1rem;
+    @if ($value == 0rem) {
+        $value: 0;
+    }
+    @return $value;
+}
+
+@function rems($values, $base-value: $font__size-body) {
+    $max: length($values);
+
+    @if $max == 1 {
+        @return rem(nth($values, 1), $base-value);
+    }
+
+    $remValues: ();
+
+    @for $i from 1 through $max {
+        $remValues: append($remValues, rem(nth($values, $i), $base-value));
+    }
+
+    @return $remValues;
+}
+
+@function lh($value, $line-height) {
+    $value: math.div(strip-unit($line-height), strip-unit($value));
+    @return $value;
+}
+
+// Converts a number to a percentage.
+@function span($number) {
+    @return percentage($number);
+}
+
+// Checks if a list contains a value(s).
+@function list-contains(
+    $list,
+    $values...
+) {
+    @each $value in $values {
+        @if type-of(index($list, $value)) != "number" {
+            @return false;
+        }
+    }
+
+    @return true;
+}

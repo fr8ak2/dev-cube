@@ -1,0 +1,16 @@
+html {
+    @include tap-highlight-color;
+    @include overflow-scrolling;
+    @include text-size-adjust;
+}
+
+html,
+body {
+    max-width: $size__site-main;
+    min-height: $size__site-height;
+    overscroll-behavior: none;
+
+	&.lenis {
+		height: auto;
+	}
+}

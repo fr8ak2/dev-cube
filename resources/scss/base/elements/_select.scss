@@ -1,0 +1,17 @@
+select {
+    font-family: inherit;
+    font-weight: 500;
+    font-size: rem(18);
+    min-width: rem(144);
+    height: rem(40);
+    padding: rems(8 44 8 24);
+    color: $color__black-text;
+    line-height: 1;
+    background: $color__select-background url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSI4IiBmaWxsPSJub25lIiB2aWV3Qm94PSIwIDAgMTIgOCI+PHBhdGggc3Ryb2tlPSIjQ0Y4QzBCIiBzdHJva2Utd2lkdGg9IjIiIGQ9Im0xMSAxLjUtNSA1LTUtNSIvPjwvc3ZnPg==") right rem(22) center no-repeat;
+    border: 1px solid transparent;
+    border-radius: rem(64);
+    text-indent: rem(1);
+    cursor: pointer;
+    appearance: none;
+    outline: none;
+}

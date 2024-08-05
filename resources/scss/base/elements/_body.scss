@@ -1,0 +1,10 @@
+body {
+    font-family: $font__main;
+    font-weight: 400;
+    font-size: $font__size-body;
+    color: $color__main-text;
+    background: $color__body-background; // Fallback for when there is no custom background color defined.
+    line-height: $font__line-height-body;
+    @include font-smoothing;
+    @include text-rendering;
+}

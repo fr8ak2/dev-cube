@@ -1,0 +1,15 @@
+@import 'copy';
+@import 'headings';
+
+:where(b, strong) {
+    font-weight: 700;
+}
+
+:where(p) {
+    font-size: rem(20);
+    line-height: 1.35;
+
+    &:is(:not(:last-of-type)) {
+        margin: 0 0 rem(24px);
+    }
+}

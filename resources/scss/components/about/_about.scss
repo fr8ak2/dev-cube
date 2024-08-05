@@ -1,0 +1,42 @@
+.about {
+    padding: rem(192) 0;
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__content {
+        max-width: rem(720);
+    }
+
+    &__text {
+        margin: 0 0 rem(40);
+    }
+
+    &__follow {
+        display: flex;
+
+        &-title {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            font-size: rem(20);
+
+            &:after {
+                content: '';
+                display: block;
+                width: rem(80);
+                height: rem(1);
+                margin: 0 rem(24);
+                background: $color__rod-background;
+            }
+        }
+
+        &-socials {
+            display: flex;
+            align-items: center;
+            gap: 0 rem(22);
+        }
+    }
+}
