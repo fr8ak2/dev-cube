@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 dotenv.config();
 
 export default defineConfig({
-    base: '/devcube/',
+    base: '/dev-cube/',
     publicDir: 'resources/static',
     build: {
         assetsDir: '',
